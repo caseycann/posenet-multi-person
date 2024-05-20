@@ -6,6 +6,10 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/segment', (req, res) => {
+  res.sendFile(path.join(__dirname, 'segment.html'));
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
